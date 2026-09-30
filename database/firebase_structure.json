@@ -1,0 +1,61 @@
+﻿{
+  "_comment": "SecureATM — Firebase Realtime Database Schema",
+  "_project": "fingerprint-based-atm-1b834",
+  "_base_url": "https://fingerprint-based-atm-1b834-default-rtdb.firebaseio.com/",
+  "_version": "1.0.0",
+
+  "atm": {
+    "_comment": "ATM session & authentication state (written by ESP32, read by Web UI)",
+    "authenticated": false,
+    "currentUser": 0,
+    "loginType": ""
+  },
+
+  "esp32": {
+    "_comment": "ESP32 hardware heartbeat status (written by ESP32 every 10 s)",
+    "online": false,
+    "lastSeen": "OFFLINE"
+  },
+
+  "users": {
+    "_comment": "Registered fingerprint users — key is fingerprint ID (1–127)",
+    "1": {
+      "name": "User One",
+      "accountNumber": "XXXX-XXXX-XXXX-0001",
+      "balance": 10000.00,
+      "pin": "0000",
+      "fingerprintId": 1,
+      "registered": true,
+      "createdAt": "2026-01-01T00:00:00Z"
+    },
+    "2": {
+      "name": "User Two",
+      "accountNumber": "XXXX-XXXX-XXXX-0002",
+      "balance": 5000.00,
+      "pin": "0000",
+      "fingerprintId": 2,
+      "registered": true,
+      "createdAt": "2026-01-01T00:00:00Z"
+    }
+  },
+
+  "transactions": {
+    "_comment": "Transaction history — key is auto-generated push ID",
+    "example_txn_id": {
+      "userId": 1,
+      "type": "withdrawal",
+      "amount": 500.00,
+      "balanceBefore": 10000.00,
+      "balanceAfter": 9500.00,
+      "timestamp": "2026-01-01T00:00:00Z",
+      "status": "success"
+    }
+  },
+
+  "commands": {
+    "_comment": "Web UI to ESP32 command channel (reserved for future use)",
+    "action": "",
+    "payload": {},
+    "timestamp": ""
+  }
+}

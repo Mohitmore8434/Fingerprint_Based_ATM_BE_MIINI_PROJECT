@@ -1,0 +1,76 @@
+# ─────────────────────────────────────────────
+#  Fingerprint-Based ATM — .gitignore
+#  Keep example/template files tracked.
+#  Keep actual secrets OUT of version control.
+# ─────────────────────────────────────────────
+
+# ── Node / React / Web UI ─────────────────────
+node_modules/
+dist/
+build/
+.next/
+out/
+.cache/
+.parcel-cache/
+*.tsbuildinfo
+
+# Local environment files (keep .env.example)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+
+# ── Firebase / Service accounts ──────────────
+# Firebase browser SDK config is NOT a private key,
+# but a service-account JSON is — never commit it.
+*-service-account.json
+*-adminsdk-*.json
+firebase-debug.log
+.firebase/
+firestore-debug.log
+database-debug.log
+
+# Live / unsanitized database exports
+database/database-live-*.json
+database/database-export-*.json
+
+# ── Arduino / Firmware ────────────────────────
+# Private config (keep config.example.h tracked)
+firmware/SecureATM/config.h
+
+# Arduino build artefacts
+*.bin
+*.elf
+*.hex
+*.map
+
+# ── OS artefacts ──────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*.lnk
+
+# ── Editor / IDE ──────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── Logs / Temp ───────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+
+# ── Test / Coverage ───────────────────────────
+coverage/
+.nyc_output/
+
+# ── Misc ──────────────────────────────────────
+*.zip
+*.tar.gz
+*.rar
